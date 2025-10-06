@@ -39,26 +39,16 @@ public class Reduce_Solution_Test {
     }
 
     @Test
-    public void test_reverse() {
+    public void test_maximum() {
 
         // ARRANGE
         List<Integer> input = Arrays.asList(1, 2, 3, 4, 5);
 
         // ACT
         // here you can see how much Java fights against working nicely with immutable lists...
-        List<Integer> result = input.stream().reduce(new ArrayList<Integer>(), (List<Integer> acc, Integer element) -> {
-            List<Integer> res = new ArrayList<>();
-            res.add(element);
-            res.addAll(acc);
-            return res;
-        }, (a, b) -> {
-            List<Integer> res = new ArrayList<>();
-            res.addAll(a);
-            res.addAll(b);
-            return res;
-        });
+        Integer result = input.stream().reduce(Integer.MIN_VALUE, (Integer acc, Integer element) -> element > acc ? element : acc);
 
         // ASSERT
-        Assertions.assertThat(result).containsExactly(5, 4, 3, 2, 1);
+        Assertions.assertThat(result).isEqualTo(5);
     }
 }

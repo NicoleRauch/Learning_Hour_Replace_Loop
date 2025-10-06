@@ -47,20 +47,22 @@ public class Reduce_Test {
     }
 
     @Test
-    public void test_reverse() {
+    public void test_maximum() {
 
         // ARRANGE
         List<Integer> input = Arrays.asList(1, 2, 3, 4, 5);
 
         // ACT
         // Change this to apply the map function:
-        List<Integer> result = new ArrayList<>();
+        int result = Integer.MIN_VALUE;
         for (Integer i : input) {
-            result.addFirst(i);
+            if(i > result){
+                result = i;
+            }
         }
 
         // ASSERT
-        Assertions.assertThat(result).containsExactly(5, 4, 3, 2, 1);
+        Assertions.assertThat(result).isEqualTo(5);
     }
 
 }
