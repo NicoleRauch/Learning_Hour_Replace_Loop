@@ -1,13 +1,12 @@
-package org.example.B_map;
+package test.java.org.example.Z_solutions;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Map_Test {
+public class Map_Solution_Test {
 
     @Test
     public void test_plusOne() {
@@ -16,11 +15,7 @@ public class Map_Test {
         List<Integer> input = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
         // ACT
-        // Change this to apply the map function:
-        List<Integer> result = new ArrayList<>();
-        for (int i : input) {
-            result.add(i + 1);
-        }
+        List<Integer> result = input.stream().map(i -> i+1).toList();
 
         // ASSERT
         Assertions.assertThat(result).containsExactly(2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
@@ -34,11 +29,7 @@ public class Map_Test {
         List<String> input = Arrays.asList("1", "2", "3", "4", "5");
 
         // ACT
-        // Change this to apply the map function:
-        List<Integer> result = new ArrayList<>();
-        for (String s : input) {
-            result.add(Integer.parseInt(s));
-        }
+        List<Integer> result = input.stream().map(Integer::parseInt).toList();
 
         // ASSERT
         Assertions.assertThat(result).containsExactly(1, 2, 3, 4, 5);
@@ -51,11 +42,7 @@ public class Map_Test {
         List<String> input = Arrays.asList("Hello", "I", "am", "glad", "to", "meet", "you");
 
         // ACT
-        // Change this to apply the map function:
-        List<Integer> result = new ArrayList<>();
-        for (String s : input) {
-            result.add(s.length());
-        }
+        List<Integer> result = input.stream().map(String::length).toList();
 
         // ASSERT
         Assertions.assertThat(result).containsExactly(5, 1, 2, 4, 2, 4, 3);

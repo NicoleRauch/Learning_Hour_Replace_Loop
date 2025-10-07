@@ -1,4 +1,4 @@
-package org.example.A_filter;
+package test.java.org.example.A_filter;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;

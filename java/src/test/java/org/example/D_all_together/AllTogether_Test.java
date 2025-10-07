@@ -1,4 +1,4 @@
-package org.example.D_all_together;
+package test.java.org.example.D_all_together;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;

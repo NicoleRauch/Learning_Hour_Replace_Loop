@@ -1,4 +1,4 @@
-package org.example.C_reduce;
+package test.java.org.example.C_reduce;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
